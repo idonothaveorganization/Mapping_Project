@@ -12,6 +12,9 @@ import networkx as nx
 import numpy as np
 import osmnx as ox
 import pandas as pd
+
+
+
 #########  Change this directory respectively
 Dir = r'C:\Users\zheng\.spyder-py3\Population.xlsx'
 #########
@@ -21,6 +24,8 @@ place = 'Champaign, Illinois, USA'
 gdf = ox.gdf_from_place(place)
 area = ox.projection.project_gdf(gdf).unary_union.area
 G = ox.graph_from_place(place, network_type='drive_service',simplify = True)
+
+
 Population_Score = {}   
 #create a new dict for population score
 node_id = list(G.nodes())
